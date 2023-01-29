@@ -29,7 +29,7 @@ typedef struct RequestPadData {
 	RequestPadDataFlags flags;
 	uint8_t port_id;
 	uint8_t mac[6];
-};
+} RequestPadData;
 
 // Responses
 typedef struct PortInfoResponse {

@@ -6,7 +6,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <WinSock2.h>
+#include <WS2tcpip.h>
 
 #include "joystick.h"
 
@@ -57,7 +61,7 @@ void citrapad_loop() {
   uint8_t pad_mac[6] = {0x9c, 0xaa, 0x1b, 0xbb, 0xd4, 0x22};
   uint32_t counter = 1;
 
-  struct sockaddr_in sa = {};
+  struct sockaddr_in sa;
   memset(&sa, 0, sizeof(sa));
   size_t fromlen = sizeof(sa);
 
